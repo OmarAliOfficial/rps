@@ -30,7 +30,7 @@ function game(){
     let pCount = 0;
     let cCount = 0;
 
-    for(i = 0; i < 5; i++){
+    for(let i = 0; i < 5; i++){
         let pChoice = playerChoice();
         let cChoice = getComputerChoice();
 
