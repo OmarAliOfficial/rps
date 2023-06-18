@@ -1,6 +1,8 @@
 const rock = document.querySelector(".rock");
 const paper = document.querySelector(".paper");
 const scissors = document.querySelector(".scissors");
+let computerScore = document.querySelector('.cScore');
+let playerScore = document.querySelector('.pScore');
 
 function getComputerChoice(){
     let choices = ["r", "p", "s"];
@@ -27,48 +29,47 @@ scissors.addEventListener('click', () => {
 function playRound(playerChoice, computerChoice){
     if(playerChoice == computerChoice)
         return "Tie game!";
-    else if(playerChoice == "s" && computerChoice == "r")
+    else if(playerChoice == "s" && computerChoice == "r"){
+        cScorer();
         return "Computer wins!";
-    else if(playerChoice == "s" && computerChoice == "p")
+    }
+    else if(playerChoice == "s" && computerChoice == "p"){
+        pScorer();
         return "Player wins!";
-    else if(playerChoice == "p" && computerChoice == "r")
+    }
+    else if(playerChoice == "p" && computerChoice == "r"){
+        pScorer();
         return "Player wins!";
-    else if(playerChoice == "p" && computerChoice == "s")
+    }
+    else if(playerChoice == "p" && computerChoice == "s"){
+        cScorer();
         return "Computer wins!";
-    else if(playerChoice == "r" && computerChoice == "s")
+    }
+    else if(playerChoice == "r" && computerChoice == "s"){
+        pScorer();
         return "Player wins!";
-    else if(playerChoice == "r" && computerChoice == "p")
+    }
+    else if(playerChoice == "r" && computerChoice == "p"){
+        cScorer();
         return "Computer wins!";
+    }
+}
+
+function pScorer(){
+    let number = parseInt(playerScore.textContent);
+    number++;
+    playerScore.textContent = number;
+}
+
+function cScorer(){
+    let number = parseInt(computerScore.textContent);
+    number++;
+    computerScore.textContent = number;
 }
 
 
 
 function game(){
 
-    // let pCount = 0;
-    // let cCount = 0;
-
-    // for(let i = 0; i < 5; i++){
-    //     let pChoice = playerChoice();
-    //     let cChoice = getComputerChoice();
-
-    //     if(playRound(pChoice, cChoice) == "Computer wins!"){
-    //         cCount += 1;
-    //         console.log("Computer Wins!");
-    //     }
-    //     else if(playRound(pChoice, cChoice) == "Player wins!"){
-    //         pCount += 1;
-    //         console.log("Player Wins!");
-    //     }
-    //     else{
-    //         console.log("Tie!");
-    //     }
-    // }
-
-    // if(pCount > cCount)
-    //     console.log("Player wins out 5!");
-    // else if (cCount > pCount)
-    //     console.log("Computer wins out of 5!")
+    while()
 }
-
-game();
